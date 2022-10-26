@@ -7,7 +7,7 @@ const userToAdd = {
     password: 'bertie99'
 }
 
-describe('Band and Musician Models', () => {
+describe('DB password model', () => {
 
 beforeAll(async () => {
     await sequelize.sync({force: true});
