@@ -7,6 +7,8 @@ const user = {
 };
 
 // YOUR CODE
+
+//register a new user with an encryted password 
 async function register(username, password) {
   let salt = await bcrypt.genSalt(3);
   const hashedPw = await bcrypt.hash(password, salt);
@@ -14,6 +16,7 @@ console.log("this is the king of the hash: ", hashedPw);
   await User.create({ username, password: hashedPw });
 }
 
+//login in the user by comparing password to our db 
 async function login(username, password) {
     register(username, password)
   const login = await User.findAll({ where: { username } });
